@@ -29,6 +29,7 @@ margin: 2px;
     width: 40%;
     height: 100vh;
     margin-top: 50px;
+    position: relative;
 }
 
   @media (max-width: 1400px){

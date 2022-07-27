@@ -1,15 +1,32 @@
-import react, {useState} from 'react'
+import react, {useState, useEffect} from 'react'
 import {connect} from 'react-redux';
 import style from '../styles/grillaStyle.module.css'
 import Puntaje from './puntaje';
-import { modifiedGrilla, cambiaTurno } from '../redux-thunks/grillaDuck';
+import { modifiedGrilla, cambiaTurno, tatetiAction, ganadorAction, ganaRojo } from '../redux-thunks/grillaDuck';
 
-function Grilla({grilla, turno, modifiedGrilla, cambiaTurno}){
+function Grilla({grilla, turno, ganaCruz, puntaje, modifiedGrilla, cambiaTurno, tatetiAction, ganadorAction, ganaRojo}){
     // const [num, setNum] = useState()
 
+
+    useEffect(() => {
+        ganadorAction();
+    })
+
+    function alerta(){
+        console.log(ganaCruz)
+        if(ganaCruz){
+            return (
+                <div className="alert alert-danger" role="alert">
+                    Un punto para Cruz!
+                </div>
+            )
+        }else return  (<div>hola</div>)
+    }
     function click(num, turnoo){
+        // ganadorAction()
         modifiedGrilla(num, turnoo)
         cambiaTurno()
+        tatetiAction(num)
         console.log(num, turnoo)
     }
     
@@ -41,6 +58,8 @@ function Grilla({grilla, turno, modifiedGrilla, cambiaTurno}){
     return (
         <div className={style.container}>
             <h1>Turno: {turno}</h1>
+            
+            {alerta()}
             <div className="row row-cols-3" >
                 {grilla.map((g, i) =>{
                     return (
@@ -52,7 +71,7 @@ function Grilla({grilla, turno, modifiedGrilla, cambiaTurno}){
                 })}
 
             </div>
-            <Puntaje/>
+            <Puntaje punt1={puntaje[0]} punt2={puntaje[1]}/>
         </div>
     )
 }
@@ -60,8 +79,10 @@ function Grilla({grilla, turno, modifiedGrilla, cambiaTurno}){
 function mapState(state){
     return {
         grilla: state.grilla.array,
-        turno: state.grilla.turno
+        turno: state.grilla.turno,
+        puntaje: state.grilla.puntaje, 
+        ganaCruz: state.grilla.ganaCruz, 
     }
 }
 
-export default connect(mapState, {modifiedGrilla, cambiaTurno})(Grilla)
+export default connect(mapState, {modifiedGrilla, cambiaTurno, tatetiAction, ganadorAction, ganaRojo})(Grilla)

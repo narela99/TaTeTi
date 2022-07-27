@@ -2,6 +2,7 @@ import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
 import grillaReducer from './grillaDuck';
 import thunk from 'redux-thunk';
 import getGrillaAction from './grillaDuck';
+import ganadorAction from './grillaDuck'
 
 let rootReducer = combineReducers({
     grilla: grillaReducer
@@ -14,7 +15,7 @@ export default function generateStore(){
         rootReducer,
         composeEnhancers(applyMiddleware(thunk)) 
     )
-    // getGrillaAction()(store.dispatch, store.getState);
+    // ganadorAction()(store.dispatch, store.getState);
 
     return store
 }

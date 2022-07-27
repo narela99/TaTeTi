@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Grilla from './components/grilla';
+import Grilla from './components/grilla2';
 import Puntaje from './components/puntaje';
 
 function App() {
