@@ -95,6 +95,12 @@ export default function Grilla2() {
                 console.log('Un punto para Circulo')
                 return puntaje
             }
+            else if(!grilla.includes(false)){
+                    setGanador('Empate') 
+                    tateti.cruz = []
+                    tateti.circulo =[]  
+                }
+            
         }
         return puntaje
 
@@ -122,11 +128,22 @@ export default function Grilla2() {
                 setGanador(false)
                 setGrilla( [false, false, false, false, false, false, false, false, false])
             }, 2000)
-        return (
-            <div class="alert alert-primary" role="alert">
-               Un punto para circulo
-             </div>
-        )
+            return (
+                <div class="alert alert-primary" role="alert">
+                Un punto para circulo
+                </div>
+            )
+        }
+        else if(ganador === 'Empate'){
+            setTimeout(() =>{
+                setGanador(false)
+                setGrilla( [false, false, false, false, false, false, false, false, false])
+            }, 2000)
+            return (
+                <div class="alert alert-success" role="alert">
+                Empate!
+                </div>
+            )
         }
     }
 
