@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/TaTeTi/static/css/main.55f98333.css",
-    "main.js": "/TaTeTi/static/js/main.51bfed97.js",
+    "main.js": "/TaTeTi/static/js/main.67420b03.js",
     "static/js/787.c4e7f8f9.chunk.js": "/TaTeTi/static/js/787.c4e7f8f9.chunk.js",
     "static/media/logo.svg": "/TaTeTi/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/TaTeTi/index.html",
     "main.55f98333.css.map": "/TaTeTi/static/css/main.55f98333.css.map",
-    "main.51bfed97.js.map": "/TaTeTi/static/js/main.51bfed97.js.map",
+    "main.67420b03.js.map": "/TaTeTi/static/js/main.67420b03.js.map",
     "787.c4e7f8f9.chunk.js.map": "/TaTeTi/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.55f98333.css",
-    "static/js/main.51bfed97.js"
+    "static/js/main.67420b03.js"
   ]
 }
