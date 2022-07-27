@@ -5,13 +5,9 @@ import Puntaje from './puntaje';
 export default function Grilla2() {
     const[turno, setTurno] = useState('cruz');
     const [grilla, setGrilla ] = useState( [false, false, false, false, false, false, false, false, false])
-    const[puntaje, setPuntaje] = useState([1,0]);
+    const[puntaje, setPuntaje] = useState([0,0]);
     const[ganador, setGanador] = useState(false);
     const [tateti, setTateti] = useState({cruz: [], circulo: []})
-    // var tateti = {
-    //     cruz: [],
-    //     circulo: []
-    // };
     var formas = [
         [0, 1, 2],
         [3, 4, 5], 
@@ -85,12 +81,6 @@ export default function Grilla2() {
             if(filtrarCruz(formas[i]).length === 3){
                 puntaje[0] = puntaje[0] + 1;
                 setGanador('ganaCruz')
-                // console.log(ganaCruz)
-                // setTimeout(() =>{
-                //     ganaCruz = false
-                //     console.log(ganaCruz)
-                // }, 3000)
-                
                 tateti.cruz = []
                 tateti.circulo =[]
                 console.log('Un punto para cruz')
@@ -113,7 +103,7 @@ export default function Grilla2() {
     function siGana(){
         if(ganador === false){
             return (
-                <h1>Turno: {turno}</h1>
+                <h1> Turno: {turno}</h1>
             )
         }
         else if(ganador === 'ganaCruz'){
@@ -183,19 +173,7 @@ export default function Grilla2() {
     }
     return (
         <div className={style.container}>
-            {/* <h1>Turno: {turno}</h1> */}
             {siGana()}
-            {/* <div className="row row-cols-3" >
-                {grilla.map((g, i) =>{
-                    return (
-                    <div className='col' >
-                        {crucecita(g, i)}
-                        
-                    </div>
-                )
-                })}
-
-            </div> */}
             {grillaa()}
             <Puntaje punt1={puntaje[0]} punt2={puntaje[1]}/>
         </div>

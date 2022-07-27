@@ -32,6 +32,24 @@ margin: 2px;
     position: relative;
 }
 
+.puntRojo{
+    background-color: 'red';
+    height: 70;
+    margin: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.puntCeleste{
+    background-color:  rgb(71, 188, 241);
+    height: 70;
+    margin: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
   @media (max-width: 1400px){
       .container{
           width: 70%;
